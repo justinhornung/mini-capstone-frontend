@@ -15,7 +15,7 @@ export function Content() {
 
   const handleProductsIndex = () => {
     console.log("handleProductsIndex");
-    axios.get("http://localhost:3000/products.json").then((response) => {
+    axios.get("/products.json").then((response) => {
       console.log(response.data);
       setProducts(response.data);
     });
@@ -25,7 +25,7 @@ export function Content() {
 
   const handleProductCreate = (params, successCallback) => {
     console.log("handleProductsCreate", params);
-    axios.get("http://localhost:3000/products.json", params).then((response) => {
+    axios.get("/products.json", params).then((response) => {
       console.log([...products, response.data]);
       successCallback();
     });
